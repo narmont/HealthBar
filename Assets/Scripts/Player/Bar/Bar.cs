@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Bar : MonoBehaviour
@@ -14,12 +15,11 @@ public class Bar : MonoBehaviour
     public void OnValueChanged(int currentHealth, int maxHealth)
     {
         _value = (float)currentHealth / maxHealth;
+        SwitchHealth();
     }
 
-    public void SwitchHealth(int value)
+    public void SwitchHealth()
     {
-        Player.ApplyHealth(value);
-
         if (_changeHealth != null)
         {
             StopCoroutine(ChangeHealth());

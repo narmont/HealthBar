@@ -343,14 +343,14 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2046977509}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: Reduce
-        m_Mode: 2
+        m_TargetAssemblyTypeName: PlayerBar, Assembly-CSharp
+        m_MethodName: SwitchHealth
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1601262362}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
-          m_FloatArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: -15
+          m_FloatArgument: 15
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1030,7 +1030,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960133243}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1044,7 +1044,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000030518, y: -8.6913}
+  m_AnchoredPosition: {x: 0.00012207031, y: -8.691284}
   m_SizeDelta: {x: 987.1311, y: 488.9865}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1012086671
@@ -1825,7 +1825,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 100
-  _healthText: {fileID: 1828181610}
 --- !u!4 &1601262363
 Transform:
   m_ObjectHideFlags: 0
@@ -2095,6 +2094,7 @@ GameObject:
   - component: {fileID: 1828181609}
   - component: {fileID: 1828181611}
   - component: {fileID: 1828181610}
+  - component: {fileID: 1828181612}
   m_Layer: 5
   m_Name: HealthDisplay
   m_TagString: Untagged
@@ -2219,6 +2219,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1828181608}
   m_CullTransparentMesh: 1
+--- !u!114 &1828181612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1828181608}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a12eafa324be94da2228679d8bc1a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _healthText: {fileID: 1828181610}
+  _player: {fileID: 1601262362}
 --- !u!1 &1857001700
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,13 +2571,13 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2046977509}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: Increase
-        m_Mode: 2
+        m_TargetAssemblyTypeName: PlayerBar, Assembly-CSharp
+        m_MethodName: SwitchHealth
+        m_Mode: 3
         m_Arguments:
-          m_ObjectArgument: {fileID: 1601262362}
-          m_ObjectArgumentAssemblyTypeName: Player, Assembly-CSharp
-          m_IntArgument: 0
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 15
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3066,10 +3080,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7b376ba07ef7a54aa7c4c941a900fab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Slider: {fileID: 2046977508}
-  _increaseHealth: 15
-  _reduceHealth: 15
-  _player: {fileID: 1601262362}
+  Player: {fileID: 1601262362}
+  _slider: {fileID: 2046977508}
 --- !u!1 &2054875801
 GameObject:
   m_ObjectHideFlags: 0
